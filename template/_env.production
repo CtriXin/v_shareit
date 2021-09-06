@@ -1,0 +1,8 @@
+NODE_ENV = 'production'
+VUE_APP_MODE = 'production'
+VUE_APP_REPORT_SDK_ENV = 'prod'
+VUE_APP_REPORT_SDK_GROUPNAME = 'web'
+
+
+VUE_APP_BASE_API = ""
+

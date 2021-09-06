@@ -1,0 +1,120 @@
+@import '../hhrest.scss';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+// vw + rem
+// 根元素大小使用 vw 单位
+$vw_design: 720;
+// rem 单位换算：定为 75px 只是方便运算，750px-75px、640-64px、1080px-108px，如此类推
+$vw_fontsize: 72; // iPhone 6尺寸的根元素大小基准值
+
+@function rem($px) {
+	@return ($px / $vw_fontsize) * 1rem;
+}
+
+html {
+	font-size: 3.4vw;
+}
+
+body {
+	font-size: rem(26);
+	width: rem(720);
+	margin: 0 auto !important;
+	font-family: Roboto-Medium, Roboto;
+	font-weight: 500;
+	color: #14cb5a;
+	background: #090909;
+	min-height:-webkit-fill-available;
+
+}
+
+#app {
+	width: rem(720);
+	margin: 0 auto ;
+	position: relative;
+}
+
+#nav-row {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	padding-left: rem(16);
+	height: rem(78);
+	padding-top: rem(15);
+	position: relative;
+	z-index: 99999;
+	.nav-item {
+		width: rem(98);
+		margin: 0 0 0 rem(34);
+		text-align: center;
+		font-size: rem(26);
+		font-family: Roboto-Regular, Roboto;
+		font-weight: 400;
+		color: #666666;
+		line-height: rem(30);
+		&.activity {
+			color: #14cb5a;
+			position: relative;
+			&::after {
+				content: ' ';
+				position: absolute;
+				width: rem(32);
+				left: 50%;
+				margin-left: rem(-16);
+				height: rem(6);
+				background: #14cb5a;
+				border-radius: rem(3);
+				bottom: rem(-9);
+			}
+		}
+	}
+}
+
+
+
+#loading-element {
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	.loading-png {
+		width: rem(86);
+		height: rem(86);
+		margin-bottom: rem(32);
+		animation: loading 3s linear infinite;
+		img {
+			width: 100%;
+		}
+	}
+	.loading-txt {
+		font-size: rem(28);
+		font-family: Roboto-Regular, Roboto;
+		font-weight: 400;
+		color: rgba(255, 255, 255, 0.8);
+		line-height: rem(33);
+	}
+}
+
+
+img{
+	object-fit: cover !important;
+}
+
+
+
+@media screen and (max-width: 768px) {
+	html {
+		font-size: ($vw_fontsize / ($vw_design)) * 100vw; //就是相当于10vw
+	}
+}
+
+@media screen and (min-width: 769px) {
+	body {
+		position: relative;
+	}
+}

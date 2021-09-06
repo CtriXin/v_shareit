@@ -1,0 +1,14 @@
+NODE_ENV = 'test'
+VUE_APP_MODE = 'test'
+VUE_APP_REPORT_SDK_ENV = 'test'
+VUE_APP_REPORT_SDK_GROUPNAME = 'rst'
+
+
+VUE_APP_BASE_API = ""
+
+
+
+
+
+
+port =  5007

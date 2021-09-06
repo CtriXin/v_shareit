@@ -1,0 +1,69 @@
+// @import '../hhrest.scss';
+// vw + rem
+// 根元素大小使用 vw 单位
+$vw_design: 720;
+// rem 单位换算：定为 75px 只是方便运算，750px-75px、640-64px、1080px-108px，如此类推
+$vw_fontsize: 72; // iPhone 6尺寸的根元素大小基准值
+
+@function rem($px) {
+	@return ($px / $vw_fontsize) * 1rem;
+}
+
+.img-row {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: stretch;
+	padding-top: rem(16);
+	padding-left: rem(16);
+	.img-item {
+		width: rem(220);
+		height: rem(390);
+		border-radius: rem(8);
+		background: #666666;
+		margin-right: rem(14);
+		margin-bottom: rem(14);
+		position: relative;
+		overflow: hidden;
+		.img-display-detail{
+			width: 100%;
+			height: 100%;
+			img{
+				width: 100%;
+				height: 100%;
+				object-fit: cover !important;
+			}
+			
+		}
+		
+	}
+}
+
+.live{
+	width: rem(48);
+	height: rem(48);
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.more-memo {
+	font-size: rem(24);
+	font-family: Roboto-Black, Roboto;
+	font-weight: 900;
+	color: #757575;
+	line-height: rem(28);
+	text-align: center;
+	width: 100%;
+	margin-top: rem(60);
+}
+
+
+
+.img-display-container{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+}

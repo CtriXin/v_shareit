@@ -1,0 +1,2 @@
+// prompts.js
+module.exports = []
